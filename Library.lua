@@ -5,12 +5,12 @@
 
 local Axis = Instance.new("ScreenGui")
 local ImageLabel = Instance.new("ImageLabel")
-local TextLabel = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
-local TextButton_2 = Instance.new("TextButton")
-local TextBox = Instance.new("TextBox")
+local Close = Instance.new("ImageButton")
+local Lesspend = Instance.new("ImageButton")
+local Expend = Instance.new("ImageButton")
 local ImageLabel_2 = Instance.new("ImageLabel")
-local Close1 = Instance.new("ImageButton")
+local TextBox = Instance.new("TextBox")
+local Submit = Instance.new("ImageButton")
 
 --Properties:
 
@@ -23,59 +23,57 @@ ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.222471699, 0, 0.158640221, 0)
-ImageLabel.Size = UDim2.new(0, 889, 0, 481)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=118340303282357"
+ImageLabel.Position = UDim2.new(0.211873189, 0, 0.145631, 0)
+ImageLabel.Size = UDim2.new(0, 923, 0, 500)
+ImageLabel.Image = "rbxassetid://118699325436446"
 
-TextLabel.Parent = ImageLabel
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.0404949374, 0, 0.0249480251, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "Axis"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+Close.Name = "Close"
+Close.Parent = ImageLabel
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.884073675, 0, 0.0299999993, 0)
+Close.Size = UDim2.new(0, 50, 0, 50)
+Close.Image = "rbxassetid://113583318939835"
 
-TextButton.Parent = ImageLabel
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.BackgroundTransparency = 1.000
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.017997751, 0, 0.214137211, 0)
-TextButton.Size = UDim2.new(0, 200, 0, 50)
-TextButton.Font = Enum.Font.FredokaOne
-TextButton.Text = "Key"
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
+Lesspend.Name = "Lesspend"
+Lesspend.Parent = ImageLabel
+Lesspend.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Lesspend.BackgroundTransparency = 1.000
+Lesspend.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Lesspend.BorderSizePixel = 0
+Lesspend.Position = UDim2.new(0.816901386, 0, 0.0299999993, 0)
+Lesspend.Size = UDim2.new(0, 50, 0, 50)
+Lesspend.Image = "rbxassetid://82584071856673"
 
-TextButton_2.Parent = TextButton
-TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.BackgroundTransparency = 1.000
-TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.BorderSizePixel = 0
-TextButton_2.Position = UDim2.new(2.18299794, 0, 2.41413689, 0)
-TextButton_2.Size = UDim2.new(0, 200, 0, 50)
-TextButton_2.Font = Enum.Font.FredokaOne
-TextButton_2.Text = "Submit"
-TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
+Expend.Name = "Expend"
+Expend.Parent = Lesspend
+Expend.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Expend.BackgroundTransparency = 1.000
+Expend.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Expend.BorderSizePixel = 0
+Expend.Position = UDim2.new(-0.00309814443, 0, -0.00999999978, 0)
+Expend.Size = UDim2.new(0, 50, 0, 50)
+Expend.Visible = false
+Expend.Image = "rbxassetid://94148010820936"
 
-TextBox.Parent = TextButton
+ImageLabel_2.Parent = ImageLabel
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
+ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel_2.BorderSizePixel = 0
+ImageLabel_2.Position = UDim2.new(0.322860241, 0, 0.275999993, 0)
+ImageLabel_2.Size = UDim2.new(0, 568, 0, 62)
+ImageLabel_2.Image = "rbxassetid://80244724815279"
+
+TextBox.Parent = ImageLabel_2
 TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextBox.BackgroundTransparency = 1.000
 TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.BorderSizePixel = 0
-TextBox.Position = UDim2.new(1.42499995, 0, 0.639999986, 0)
-TextBox.Size = UDim2.new(0, 515, 0, 50)
+TextBox.Position = UDim2.new(0, 0, 0.145161286, 0)
+TextBox.Size = UDim2.new(0, 568, 0, 44)
 TextBox.Font = Enum.Font.FredokaOne
 TextBox.Text = ""
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -83,56 +81,73 @@ TextBox.TextScaled = true
 TextBox.TextSize = 14.000
 TextBox.TextWrapped = true
 
-ImageLabel_2.Parent = ImageLabel
-ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_2.BackgroundTransparency = 1.000
-ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_2.BorderSizePixel = 0
-ImageLabel_2.Position = UDim2.new(0.017997751, 0, 0.00415800419, 0)
-ImageLabel_2.Size = UDim2.new(0, 69, 0, 69)
-ImageLabel_2.Image = "http://www.roblox.com/asset/?id=92143081133233"
+Submit.Name = "Submit"
+Submit.Parent = ImageLabel
+Submit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Submit.BackgroundTransparency = 1.000
+Submit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Submit.BorderSizePixel = 0
+Submit.Position = UDim2.new(0.522210181, 0, 0.505999982, 0)
+Submit.Size = UDim2.new(0, 200, 0, 50)
+Submit.Image = "rbxassetid://70541257675712"
 
-Close1.Name = "Close1"
-Close1.Parent = ImageLabel
-Close1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Close1.BackgroundTransparency = 1.000
-Close1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Close1.BorderSizePixel = 0
-Close1.Position = UDim2.new(0.95050621, 0, -0.0623700619, 0)
-Close1.Size = UDim2.new(0, 74, 0, 74)
-Close1.Image = "http://www.roblox.com/asset/?id=112114240564751"
+-- Functions:
 
--- Draggable UI
-local dragging = false
-local dragInput, dragStart, startPos
+local UIS = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local dragging, dragStart, startPos
 
-local function updateDrag(input)
-    local delta = input.Position - dragStart
-    Axis.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-end
-
+-- Dragging Functionality:
 ImageLabel.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
         dragging = true
         dragStart = input.Position
-        startPos = Axis.Position
-
-        -- Track input movement
-        input.Changed:Connect(function()
-            if dragging and input.UserInputState == Enum.UserInputState.Moving then
-                updateDrag(input)
-            end
-        end)
+        startPos = ImageLabel.Position
     end
 end)
 
-ImageLabel.InputEnded:Connect(function(input)
+ImageLabel.InputChanged:Connect(function(input)
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        ImageLabel.Position = UDim2.new(
+            startPos.X.Scale,
+            startPos.X.Offset + delta.X,
+            startPos.Y.Scale,
+            startPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+UIS.InputEnded:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
         dragging = false
     end
 end)
 
--- Close the UI when clicking the close button
-Close1.MouseButton1Click:Connect(function()
-    Axis:Destroy()  -- This will remove the entire UI
+-- Close Functionality:
+Close.MouseButton1Click:Connect(function()
+    local closeTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5), {BackgroundTransparency = 1})
+    closeTween:Play()
+    closeTween.Completed:Wait()
+    Axis:Destroy()
 end)
+
+-- Resize (Lesspend and Expend):
+Lesspend.MouseButton1Click:Connect(function()
+    Lesspend.Visible = false
+    Expend.Visible = true
+    local shrinkTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5), {Size = UDim2.new(0, 500, 0, 300)})
+    shrinkTween:Play()
+end)
+
+Expend.MouseButton1Click:Connect(function()
+    Expend.Visible = false
+    Lesspend.Visible = true
+    local expandTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5), {Size = UDim2.new(0, 923, 0, 500)})
+    expandTween:Play()
+end)
+
+-- Startup Animation:
+ImageLabel.Size = UDim2.new(0, 0, 0, 0)
+local startupTween = TweenService:Create(ImageLabel, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 923, 0, 500)})
+startupTween:Play()

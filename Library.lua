@@ -11,6 +11,8 @@ local Expend = Instance.new("ImageButton")
 local ImageLabel_2 = Instance.new("ImageLabel")
 local TextBox = Instance.new("TextBox")
 local Submit = Instance.new("ImageButton")
+local AxisLogo = Instance.new("ImageLabel")
+local AxisText = Instance.new("TextLabel")
 
 --Properties:
 
@@ -91,7 +93,24 @@ Submit.Position = UDim2.new(0.522210181, 0, 0.505999982, 0)
 Submit.Size = UDim2.new(0, 200, 0, 50)
 Submit.Image = "rbxassetid://70541257675712"
 
--- Functions:
+AxisLogo.Name = "AxisLogo"
+AxisLogo.Parent = Axis
+AxisLogo.BackgroundTransparency = 1
+AxisLogo.Position = UDim2.new(0.5, -50, 0.3, -50)
+AxisLogo.Size = UDim2.new(0, 100, 0, 100)
+AxisLogo.Image = "rbxassetid://92143081133233"
+
+AxisText.Name = "AxisText"
+AxisText.Parent = Axis
+AxisText.BackgroundTransparency = 1
+AxisText.Position = UDim2.new(0.5, -50, 0.5, -25)
+AxisText.Size = UDim2.new(0, 200, 0, 50)
+AxisText.Font = Enum.Font.FredokaOne
+AxisText.Text = "Axis"
+AxisText.TextColor3 = Color3.fromRGB(255, 255, 255)
+AxisText.TextScaled = true
+
+-- Services:
 
 local UIS = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -124,9 +143,9 @@ UIS.InputEnded:Connect(function(input)
     end
 end)
 
--- Close Functionality:
+-- Close Button:
 Close.MouseButton1Click:Connect(function()
-    local closeTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5), {BackgroundTransparency = 1})
+    local closeTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 1, Size = UDim2.new(0, 0, 0, 0)})
     closeTween:Play()
     closeTween.Completed:Wait()
     Axis:Destroy()
@@ -136,18 +155,45 @@ end)
 Lesspend.MouseButton1Click:Connect(function()
     Lesspend.Visible = false
     Expend.Visible = true
-    local shrinkTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5), {Size = UDim2.new(0, 500, 0, 300)})
+    local shrinkTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 500, 0, 300)})
     shrinkTween:Play()
+    TextBox.Visible = false
 end)
 
 Expend.MouseButton1Click:Connect(function()
     Expend.Visible = false
     Lesspend.Visible = true
-    local expandTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5), {Size = UDim2.new(0, 923, 0, 500)})
+    local expandTween = TweenService:Create(ImageLabel, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 923, 0, 500)})
     expandTween:Play()
+    TextBox.Visible = true
 end)
 
--- Startup Animation:
-ImageLabel.Size = UDim2.new(0, 0, 0, 0)
-local startupTween = TweenService:Create(ImageLabel, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 923, 0, 500)})
-startupTween:Play()
+-- Axis Logo and Text Animation:
+local logoTween = TweenService:Create(AxisLogo, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0, Position = UDim2.new(0.5, -50, 0.3, -25)})
+local textTween = TweenService:Create(AxisText, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 0})
+
+wait(2)
+logoTween:Play()
+textTween:Play()
+logoTween.Completed:Wait()
+
+wait(5)
+local fadeOutLogoTween = TweenService:Create(AxisLogo, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 1})
+local fadeOutTextTween = TweenService:Create(AxisText, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1})
+fadeOutLogoTween:Play()
+fadeOutTextTween:Play()
+fadeOutLogoTween.Completed:Wait()
+
+AxisLogo.Visible = false
+AxisText.Visible = false
+
+-- Submit Button Functionality:
+Submit.MouseButton1Click:Connect(function()
+    local inputText = TextBox.Text
+    if inputText and inputText ~= "" then
+        print("Submitted Text: " .. inputText)
+        TextBox.Text = ""
+    else
+        print("TextBox is empty!")
+    end
+end)
